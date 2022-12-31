@@ -1362,10 +1362,6 @@ async function jaiLocate(filepath: string, position: Position, operation: string
 	let normalized = filepath.replace(/\\/g, '/');
 
 	let args : string [] = [
-		"-import_dir",
-		modulepath,
-		"-meta",
-		"VSCodeLocate",
 		fileToCompile,
 		"-no_dce"
 	];
@@ -1373,11 +1369,17 @@ async function jaiLocate(filepath: string, position: Position, operation: string
 	for (let i = 0; i < projectCompilerArgs.length; i++)
 		args.push(projectCompilerArgs[i]);
 
-	args.push("--");
+	args.push("-");
 	args.push("Find");
 	args.push(normalized);
 	args.push((position.line + 1).toString());
 	args.push((position.character + 1).toString());
+
+	args.push("--");
+	args.push("import_dir");
+	args.push(modulepath);
+	args.push("meta");
+	args.push("VSCodeLocate");
 
 	if (debugMode) logCommand(exepath as string, args);
 

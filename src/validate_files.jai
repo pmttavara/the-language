@@ -6,6 +6,11 @@ package_file      :: "../package.json";
 changelog_file    :: "../CHANGELOG.md";
 
 
+#run {
+    #import "Compiler";
+    set_build_options_dc(.{do_output=false});
+    main();
+}
 main :: () {
     changelog_report := trim_start_past(changelog_file, #char "/");
     package_report := trim_start_past(package_file, #char "/");

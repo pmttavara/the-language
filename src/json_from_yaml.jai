@@ -123,6 +123,11 @@ deprecated_names : string = ---;
 support_function_names : string = ---;
 support_class_names : string = ---;
 
+#run {
+    #import "Compiler";
+    set_build_options_dc(.{do_output=false});
+    main();
+}
 main :: () {
     args :=  get_command_line_arguments();
     noisey := args.count > 1;

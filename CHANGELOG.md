@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.0.87] - 2022-12-31
+* Updated for v0.1.049
+
 ## [0.0.86] - 2022-11-29
 * Added Outlining/Folding/Sticky Scroll
 * Updated for v0.1.046

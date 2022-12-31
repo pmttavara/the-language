@@ -9,3 +9,4 @@ src/.build/
 *.exe
 *.dll
 descriptions.htmls
+package-lock.json
